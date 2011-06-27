@@ -31,4 +31,9 @@ class WikiEngineImplTest_JUnit {
     val actual = target.toHtml(input)
     assertThat(actual, is(expected)) 
   }
+
+  @Test
+  def implements_WikiEngine = {
+    assertTrue(target.isInstanceOf[WikiEngine])
+  }
 }

@@ -28,4 +28,9 @@ class WikiEngineImplTest_ScalaTest extends JUnitSuite {
     val actual = target.toHtml(input)
     actual should be (expected)
   }
+
+  @Test
+  def implements_WikiEngine = {
+    target.isInstanceOf[WikiEngine] should be (true)
+  }
 }
