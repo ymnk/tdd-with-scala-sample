@@ -46,4 +46,12 @@ class WikiEngineImplTest_ScalaTest extends JUnitSuite {
     val actual = target.toHtml(input)
     actual should be (expected)
   }
+
+  @Test
+  def toHtml_Heading2 = {
+    val input = "== Heading2 =="
+    val expected = "<h2>Heading2</h2>"
+    val actual = target.toHtml(input)
+    actual should be (expected)
+  }
 }
