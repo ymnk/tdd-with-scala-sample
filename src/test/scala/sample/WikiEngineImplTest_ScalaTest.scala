@@ -38,4 +38,12 @@ class WikiEngineImplTest_ScalaTest extends JUnitSuite {
   def toHtml_null: Unit = {
     intercept[IllegalArgumentException]{ target.toHtml(null) }
   }
+
+  @Test
+  def toHtml_Heading = {
+    val input = "= Heading ="
+    val expected = "<h1>Heading</h1>"
+    val actual = target.toHtml(input)
+    actual should be (expected)
+  }
 }
