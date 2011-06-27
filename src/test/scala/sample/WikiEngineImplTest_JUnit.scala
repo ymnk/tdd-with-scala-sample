@@ -89,4 +89,12 @@ class WikiEngineImplTest_JUnit {
     val actual = target.toHtml(input)
     assertThat(actual, is(expected)) 
   }
+
+  @Test
+  def toHtml_Heading7 = {
+    val input = "======= Heading7 ======="
+    val expected = "======= Heading7 ======="
+    val actual = target.toHtml(input)
+    assertThat(actual, is(expected)) 
+  }
 }
