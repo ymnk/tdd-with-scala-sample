@@ -36,4 +36,10 @@ class WikiEngineImplTest_JUnit {
   def implements_WikiEngine = {
     assertTrue(target.isInstanceOf[WikiEngine])
   }
+
+  @Test ( expected = classOf[IllegalArgumentException] )
+  def toHtml_null: Unit = {
+    target.toHtml(null)
+  }
+
 }

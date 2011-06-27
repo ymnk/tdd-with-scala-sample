@@ -33,4 +33,9 @@ class WikiEngineImplTest_ScalaTest extends JUnitSuite {
   def implements_WikiEngine = {
     target.isInstanceOf[WikiEngine] should be (true)
   }
+
+  @Test
+  def toHtml_null: Unit = {
+    intercept[IllegalArgumentException]{ target.toHtml(null) }
+  }
 }

@@ -2,5 +2,9 @@
 package sample
 
 class WikiEngineImpl extends WikiEngine {
-  def toHtml(input: String): String = input
+  def toHtml(input: String): String = {
+    Option(input).getOrElse{
+      throw new IllegalArgumentException("input == null");
+    }
+  }
 }
