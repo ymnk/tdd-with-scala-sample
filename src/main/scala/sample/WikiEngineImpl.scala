@@ -2,5 +2,5 @@
 package sample
 
 class WikiEngineImpl {
-  def toHtml(input: String): String = "Hello World"
+  def toHtml(input: String): String = input
 }

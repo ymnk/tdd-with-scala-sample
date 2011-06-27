@@ -9,13 +9,26 @@ import org.hamcrest.CoreMatchers._
 
 @RunWith(classOf[JUnit4])
 class WikiEngineImplTest_JUnit {
+  var target: WikiEngineImpl = _
+
+  @Before
+  def setUp = {
+    target = new WikiEngineImpl()
+  }
 
   @Test
   def toHtml_HelloWorld = {
-    val target = new WikiEngineImpl()
     val input = "Hello World"
     val expected = "Hello World"
     val actual = target.toHtml(input)
     assertThat(actual, is(expected))
+  }
+
+  @Test
+  def toHtml_TDD_Bootcamp = {
+    val input = "TDD Bootcamp"
+    val expected = "TDD Bootcamp"
+    val actual = target.toHtml(input)
+    assertThat(actual, is(expected)) 
   }
 }

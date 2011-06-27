@@ -6,12 +6,25 @@ import org.scalatest.junit.ShouldMatchersForJUnit._
 import org.junit.{Test, Before}
 
 class WikiEngineImplTest_ScalaTest extends JUnitSuite {
+  var target: WikiEngineImpl = _
+
+  @Before
+  def setUp = {
+    target = new WikiEngineImpl()
+  }
 
   @Test
   def toHtml_HelloWorld = {
-    val target = new WikiEngineImpl()
     val input = "Hello World"
     val expected = "Hello World"
+    val actual = target.toHtml(input)
+    actual should be (expected)
+  }
+
+  @Test
+  def toHtml_TDD_Bootcamp = {
+    val input = "TDD Bootcamp"
+    val expected = "TDD Bootcamp"
     val actual = target.toHtml(input)
     actual should be (expected)
   }
